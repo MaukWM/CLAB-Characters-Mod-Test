@@ -22,7 +22,11 @@ powershell -ExecutionPolicy Bypass -File tools\dev-link.ps1
 ```
 
 `charmodtest/` now shows up inside the decomp project and the Steam install as a junction - the folder
-Godot edits *is* this repo. Open the decomp in Godot and press F5:
+Godot edits *is* this repo. Open the decomp in Godot and it looks like this:
+
+![charmodtest/ in the Godot FileSystem dock](docs/dev-setup-filesystem.png)
+
+Launch the game (F5). On success the Output panel prints:
 
 ```
 CharModTest: Mod initializing...
