@@ -1,3 +1,8 @@
 {
-	"display_name": "Marisa"
+	"display_name": "Marisa",
+	"stats": {
+		"jump_impulse_immediate": 21.0,
+		"input_speed_cap": 14.0,
+		"default_input_speed_cap": 14.0
+	}
 }

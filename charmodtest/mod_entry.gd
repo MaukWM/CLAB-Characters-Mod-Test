@@ -3,6 +3,8 @@ extends Node
 
 const MOD_DIR = "res://charmodtest/"
 
+const StatsApplier := preload("res://charmodtest/scripts/stats_applier.gd")
+
 var registry: Node
 var config: Node
 
@@ -44,7 +46,10 @@ func _ready() -> void:
 
 
 func on_player_ready(player: Node) -> void:
-	print("CharModTest: player ready as %s" % registry.display_name(config.get_selected()))
+	var id: String = config.get_selected()
+	var def: Dictionary = registry.get_character(id)
+	StatsApplier.apply(player, def.get("stats", {}))
+	print("CharModTest: player ready as %s" % registry.display_name(id))
 
 
 func _on_character_changed(_id: String) -> void:
