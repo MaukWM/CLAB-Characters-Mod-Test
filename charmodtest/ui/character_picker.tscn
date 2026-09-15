@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://bg4fxa5pvf4hq"]
+
+[ext_resource type="Theme" uid="uid://c0dccftkuuta8" path="res://theme_stuff/themes/UITheme.tres" id="1"]
+[ext_resource type="Script" uid="uid://dpa74rhn6ruyj" path="res://charmodtest/ui/character_picker.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://be5jp7l2cnp6y" path="res://sprites/ui/selector.png" id="3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prev"]
+atlas = ExtResource("3")
+region = Rect2(190, 0, 66, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_next"]
+atlas = ExtResource("3")
+region = Rect2(0, 0, 66, 64)
+
+[node name="CharacterPicker" type="Control" unique_id=1708827514]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = -206.0
+offset_right = 684.0
+offset_bottom = -56.0
+grow_vertical = 0
+theme = ExtResource("1")
+script = ExtResource("2")
+
+[node name="Layout" type="VBoxContainer" parent="." unique_id=1693873325]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -276.0
+offset_top = 33.0
+offset_right = -121.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="Row" type="HBoxContainer" parent="Layout" unique_id=274275726]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="PrevButton" type="TextureButton" parent="Layout/Row" unique_id=638220218]
+custom_minimum_size = Vector2(66, 64)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_prev")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Portrait" type="TextureRect" parent="Layout/Row" unique_id=824074062]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NextButton" type="TextureButton" parent="Layout/Row" unique_id=712696832]
+custom_minimum_size = Vector2(66, 64)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_next")
+ignore_texture_size = true
+stretch_mode = 5

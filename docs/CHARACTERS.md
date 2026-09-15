@@ -19,6 +19,11 @@ charmodtest/characters/marisa/character.json
 
 Every key is optional. An empty `{}` plays exactly like Cirno.
 
+## portrait.png
+
+A `portrait.png` next to `character.json` is shown in the title-screen picker. 64x64 is the size the
+existing ones use. If this is not set a character will show nothing (there is no default icon).
+
 ## stats
 
 Any exported property on the player. Values are set after the player finishes its own setup.
