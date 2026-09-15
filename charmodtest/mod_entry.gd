@@ -3,12 +3,23 @@ extends Node
 
 const MOD_DIR = "res://charmodtest/"
 
+var registry: Node
+
 
 func _init() -> void:
 	print("CharModTest: Mod initializing...")
 
 
 func _ready() -> void:
+	registry = Node.new()
+	registry.name = "CharacterRegistry"
+	registry.set_script(load(MOD_DIR + "scripts/character_registry.gd"))
+	add_child(registry)
+	registry.scan()
+	# TEMP: remove once the picker shows this.
+	for id in registry.order:
+		print("CharModTest: character '%s' -> %s" % [id, registry.display_name(id)])
+
 	var modded_scene: PackedScene = load(MOD_DIR + "player_modded.tscn")
 	if modded_scene == null:
 		push_error("CharModTest: could not load player_modded.tscn")
