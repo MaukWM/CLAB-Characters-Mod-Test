@@ -50,4 +50,21 @@ func on_player_ready(player: Node) -> void:
 	var id: String = config.get_selected()
 	var def: Dictionary = registry.get_character(id)
 	StatsApplier.apply(player, def.get("stats", {}))
+	player.disabled_abilities = def.get("disable", [])
+	_add_abilities(player, def.get("abilities", {}))
 	print("CharModTest: player ready as %s" % registry.display_name(id))
+
+
+# Abilities are Nodes parented to the player, so they tick with it and die with it.
+func _add_abilities(player: Node, abilities: Dictionary) -> void:
+	for name in abilities:
+		var path := MOD_DIR + "abilities/%s.gd" % name
+		if not FileAccess.file_exists(path):
+			push_warning("CharModTest: no ability script at %s" % path)
+			continue
+		var node := Node.new()
+		node.name = str(name)
+		node.set_script(load(path))
+		player.add_child(node)
+		node.setup(player, abilities[name])
+		player.mod_abilities.append(node)

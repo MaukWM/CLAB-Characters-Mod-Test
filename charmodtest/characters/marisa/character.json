@@ -4,5 +4,16 @@
 		"jump_impulse_immediate": 21.0,
 		"input_speed_cap": 14.0,
 		"default_input_speed_cap": 14.0
-	}
+	},
+	"abilities": {
+		"dash": {
+			"replaces": "flutter_jump",
+			"speed": 30.0,
+			"lift": 5.0,
+			"cooldown": 0.5
+		}
+	},
+	"disable": [
+		"float"
+	]
 }
