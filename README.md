@@ -27,8 +27,12 @@ needed. The folder name is the id:
 }
 ```
 
-`stats` takes any exported property on the player. See [docs/CHARACTERS.md](docs/CHARACTERS.md) for
-the full list and the properties that have to be set in pairs.
+`stats` takes any exported property on the player. A character can also carry abilities and switch
+off ones the game gives Cirno.
+
+- [docs/CHARACTERS.md](docs/CHARACTERS.md) - every property that can be set, and the ones that must be set in pairs
+- [docs/ABILITIES.md](docs/ABILITIES.md) - writing an ability, adding vs replacing the game's own
+- [docs/GAME-NOTES.md](docs/GAME-NOTES.md) - what the mod relies on inside the game, for when a patch breaks it
 
 ## Development setup
 
