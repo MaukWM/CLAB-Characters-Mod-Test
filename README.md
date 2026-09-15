@@ -13,6 +13,27 @@ Playable-character mod for [Cirno! Lifts a Boulder](https://store.steampowered.c
 
 Delete `override.cfg` and the `charmodtest/` folder from the game directory.
 
+## Development setup
+
+From the repo root:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File tools\dev-link.ps1
+```
+
+`charmodtest/` now shows up inside the decomp project and the Steam install as a junction - the folder
+Godot edits *is* this repo. Open the decomp in Godot and press F5:
+
+```
+CharModTest: Mod initializing...
+CharModTest: All systems ready.
+```
+
+It finds the decompiled project and the Steam install on its own - folder names don't matter. Pass
+`-Decomp` / `-SteamDir` if it can't, or `-SkipSteam` / `-SkipDecomp` for one environment only.
+
+Undo with `tools\dev-unlink.ps1`.
+
 ## License
 
 MIT

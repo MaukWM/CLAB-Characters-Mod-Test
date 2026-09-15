@@ -15,3 +15,6 @@ Thumbs.db
 
 # Build artifacts
 *.zip
+
+# Per-dev environment paths, written by tools/dev-link.ps1
+tools/dev-paths.local.json
